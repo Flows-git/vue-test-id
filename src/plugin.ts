@@ -1,17 +1,15 @@
 import type { App, Plugin } from 'vue'
-import { vTestDirective } from './directive'
+import { VueTestIdDirective } from './directive'
 import { VueTestIdConfig } from './interface'
 
 export function VueTestId(config?: VueTestIdConfig): Plugin {
   const _config: Required<VueTestIdConfig> = {
-    ...{ directive: 'test', testid: 'testid' },
+    ...{ directive: 'test', dataset: 'testid' },
     ...config,
   }
   return {
     install(app: App) {
-      app.directive(_config.directive, vTestDirective)
+      app.directive(_config.directive, VueTestIdDirective(_config.dataset))
     },
   }
 }
-
-export default VueTestId
