@@ -4,7 +4,7 @@
   "private": false,
   "main": "dist/storybook-vue3-ts-vite.umd.js",
   "module": "dist/storybook-vue3-ts-vite.es.js",
-  "types": "types/src/index.d.ts",
+  "types": "types/index.d.ts",
   "files": [
     "dist",
     "types"
