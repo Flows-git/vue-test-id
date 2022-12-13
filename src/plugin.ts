@@ -5,7 +5,7 @@ import { VueTestIdConfig } from './interface'
 export function VueTestId(config?: VueTestIdConfig): Plugin {
   const _config: Required<VueTestIdConfig> = {
     ...{ directive: 'test', testid: 'testid' },
-    ...config
+    ...config,
   }
   return {
     install(app: App) {
