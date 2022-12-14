@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   test: {
+    globals: true,
+    environment: 'jsdom',
     coverage: {
       all: true,
       include: ['src/**'],
