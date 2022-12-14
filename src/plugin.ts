@@ -4,12 +4,12 @@ import { VueTestIdConfig } from './interface'
 
 export function VueTestId(config?: VueTestIdConfig): Plugin {
   const _config: Required<VueTestIdConfig> = {
-    ...{ directive: 'test', dataset: 'testid' },
+    ...{ directive: 'test', dataset: 'testid', active: true },
     ...config,
   }
   return {
     install(app: App) {
-      app.directive(_config.directive, VueTestIdDirective(_config.dataset))
+      app.directive(_config.directive, VueTestIdDirective(_config.dataset, _config.active))
     },
   }
 }
